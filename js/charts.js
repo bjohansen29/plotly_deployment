@@ -70,7 +70,7 @@ function buildCharts(sample) {
       // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids = FirstChosenSample.otu_ids;
     var otu_labels = FirstChosenSample.otu_labels;
-    var sample_values = FirstChosenSample.sample_values;
+    var samplevalues = FirstChosenSample.sample_values;
     var washfrequency = FirstChosenMeta.wfreq;
     console.log(washfrequency);
       // 7. Create the yticks for the bar chart.
@@ -78,7 +78,7 @@ function buildCharts(sample) {
       //  so the otu_ids with the most bacteria are last. 
 
     var yticks = otu_ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse();
-    var xticks = sample_values.slice(0,10).reverse();
+    var xticks = samplevalues.slice(0,10).reverse();
 
     console.log(xticks);
     console.log(yticks);
@@ -108,12 +108,12 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
       x: otu_ids,
-      y: sample_values,
+      y: samplevalues,
       text: otu_labels,
       mode: 'markers',
       marker: {
         color: d3.select('select').on("change", this.selectedIndex),
-        size: sample_values
+        size: samplevalues
       }
     }
    
