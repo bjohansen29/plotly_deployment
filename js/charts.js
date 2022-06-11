@@ -113,7 +113,7 @@ function buildCharts(sample) {
       mode: 'markers',
       marker: {
         color: d3.select('select').on("change", this.selectedIndex),
-        size: sampleValues
+        size: sample_values
       }
     }
    
